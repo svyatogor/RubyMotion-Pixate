@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="RubyMotion-Pixate : Pixate gem for RubyMotion." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>RubyMotion-Pixate</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Pixate/RubyMotion-Pixate">View on GitHub</a>
+
+          <h1 id="project_title">RubyMotion-Pixate</h1>
+          <h2 id="project_tagline">Pixate gem for RubyMotion.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Pixate/RubyMotion-Pixate/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Pixate/RubyMotion-Pixate/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>RubyMotion-Pixate</h1>
+
+<p>Pixate gem for RubyMotion.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>RubyMotion 1.0 or greater (see <a href="http://www.rubymotion.com">http://www.rubymotion.com</a>).</li>
+</ul><h2>Setup</h2>
+
+<ol>
+<li>
+<p>Download the Pixate Framework package from <a href="http://www.pixate.com/">http://www.pixate.com/</a> and copy the <code>PXEngine.framework</code> folder into <code>vendor</code> directory. Create the <code>vendor</code> directory if it does not exist. You should have something like this.</p>
+
+<pre><code>$ ls vendor/PXEngine.framework
+/Headers/   PXEngine   Resources/ Versions/
+</code></pre>
+</li>
+<li>
+<p>Edit the <code>Rakefile</code> of your RubyMotion project and add the following require lines.</p>
+
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'rubygems'</span>
+<span class="nb">require</span> <span class="s1">'motion-pixate'</span>
+</pre></div>
+</li>
+<li>
+<p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block.</p>
+
+<div class="highlight"><pre><span class="no">Motion</span><span class="o">::</span><span class="no">Project</span><span class="o">::</span><span class="no">App</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
+<span class="c1"># ...</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s1">'USER ID'</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">key</span>  <span class="o">=</span> <span class="s1">'KEY CODE'</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">framework</span> <span class="o">=</span> <span class="s1">'vendor/PXEngine.framework'</span>
+<span class="k">end</span>
+</pre></div>
+</li>
+<li><p>Create the <code>default.css</code> in <code>resources</code> directory. </p></li>
+</ol><h2>Usage</h2>
+
+<p>Pixate gem supports <a href="http://sass-lang.com/">Sass</a> to generate the stylesheet. Create the <code>sass</code> directory and <code>default.scss</code> with the <code>rake pixate:init</code> command. Then, <code>rake pixate:sass</code> command generates the stylesheet from <code>default.scss</code>.</p>
+
+<p>You could specify the Sass output style through <code>style</code> environment variable. For example,</p>
+
+<pre><code>$ rake pixate:sass style=compressed
+</code></pre>
+
+<p>You could use <code>nested</code>, <code>expanded</code>, <code>compact</code> and <code>compressed</code> as output style.</p>
+
+<p>Pixate gem provides "style" method in REPL. You could change the stylesheet at the moment in REPL. For example,</p>
+
+<pre><code>(main)&gt; style "button { color : blue; }"
+(main)&gt; style "button { background-color: red; corner-radius: 20pt; }"
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">RubyMotion-Pixate maintained by <a href="https://github.com/Pixate">Pixate</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
