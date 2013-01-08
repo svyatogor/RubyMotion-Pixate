@@ -43,7 +43,7 @@
 
 <ol>
 <li>
-<p>Download the Pixate Framework package from <a href="http://www.pixate.com/">http://www.pixate.com/</a> and copy the <code>PXEngine.framework</code> folder into <code>vendor</code> directory. Create the <code>vendor</code> directory if it does not exist. You should have something like this.</p>
+<p>Download the Pixate Framework package from <a href="http://www.pixate.com/">http://www.pixate.com/</a> and copy the <code>PXEngine.framework</code> folder into <code>vendor</code> directory (or alternatively just create a symbolic link). Create the <code>vendor</code> directory if it does not exist. You should have something like this.</p>
 
 <pre><code>$ ls vendor/PXEngine.framework
 /Headers/   PXEngine   Resources/ Versions/
@@ -67,8 +67,66 @@
 <span class="k">end</span>
 </pre></div>
 </li>
-<li><p>Create the <code>default.css</code> in <code>resources</code> directory. </p></li>
-</ol><h2>Usage</h2>
+<li><p>Create the <code>default.css</code> in <code>resources</code> directory.</p></li>
+</ol><p>Note: To install the motion-pixate gem, see the <a href="https://rubygems.org/gems/motion-pixate">RubyGems site</a>.</p>
+
+<h2>Example</h2>
+
+<p>We'll take the Timer example that comes with RubyMotion and add Pixate and quickly style the application. Start by following the Setup steps above to add Pixate to the Timer project.</p>
+
+<p>Type <code>rake</code> to make sure everything is good so far. You should see the Timer app running.</p>
+
+<p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/timer_run.png" alt="Timer"></p>
+
+<h2>Add the CSS File</h2>
+
+<p>In the <code>default.css</code> file you added prior, let's add a simple entry:</p>
+
+<pre><code>button {
+    background: red;
+}
+</code></pre>
+
+<p><code>Rake</code> again and you should see this:</p>
+
+<p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/red_button.png" alt="Red Button"></p>
+
+<p>Let's pretty this button up with the following CSS:</p>
+
+<pre><code>button {
+    color            : #446620;
+    background-color : linear-gradient(#87c44a, #b4da77);
+    border-width     : 1px;
+    border-color     : #84a254;
+    border-radius    : 10px;
+    font-size        : 15px;
+    font-weight      : bold;
+}
+</code></pre>
+
+<p><code>Rake</code> again and you should see this:</p>
+
+<p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/green_button.png" alt="Green Button"></p>
+
+<h2>Add a Styling ID</h2>
+
+<p>Lastly, let's change the background color. Let's add an ID to our background view. In the <code>timer_controller.rb</code> file, add the following line before the <code>end</code> of <code>viewDidLoad</code>:</p>
+
+<pre><code>    view.styleId = 'myView'
+</code></pre>
+
+<p>What's we've done here is add a <code>styleId</code> to the view so we can style it by name. Now add the following CSS after your button CSS that was already added:</p>
+
+<pre><code>#myView {
+    background: linear-gradient(#000000, #f2f4f6);
+}
+</code></pre>
+
+<p>Now you have a beautiful interface with just a few lines of CSS!</p>
+
+<p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/background_view.png" alt="Final App"></p>
+
+<h2>SASS</h2>
 
 <p>Pixate gem supports <a href="http://sass-lang.com/">Sass</a> to generate the stylesheet. Create the <code>sass</code> directory and <code>default.scss</code> with the <code>rake pixate:init</code> command. Then, <code>rake pixate:sass</code> command generates the stylesheet from <code>default.scss</code>.</p>
 
@@ -82,7 +140,7 @@
 <p>Pixate gem provides "style" method in REPL. You could change the stylesheet at the moment in REPL. For example,</p>
 
 <pre><code>(main)&gt; style "button { color : blue; }"
-(main)&gt; style "button { background-color: red; corner-radius: 20pt; }"
+(main)&gt; style "button { background-color: red; border-radius: 20pt; }"
 </code></pre>
       </section>
     </div>
