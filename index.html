@@ -82,10 +82,10 @@
 
 <p>In the <code>default.css</code> file you added prior, let's add a simple entry:</p>
 
-<pre><code>button {
-    background: red;
-}
-</code></pre>
+<div class="highlight"><pre>    <span class="nt">button</span> <span class="p">{</span>
+        <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
 
 <p><code>Rake</code> again and you should see this:</p>
 
@@ -93,16 +93,16 @@
 
 <p>Let's pretty this button up with the following CSS:</p>
 
-<pre><code>button {
-    color            : #446620;
-    background-color : linear-gradient(#87c44a, #b4da77);
-    border-width     : 1px;
-    border-color     : #84a254;
-    border-radius    : 10px;
-    font-size        : 15px;
-    font-weight      : bold;
-}
-</code></pre>
+<div class="highlight"><pre>    <span class="nt">button</span> <span class="p">{</span>
+        <span class="k">color</span>            <span class="o">:</span> <span class="m">#446620</span><span class="p">;</span>
+        <span class="k">background-color</span> <span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="m">#87c44a</span><span class="o">,</span> <span class="m">#b4da77</span><span class="p">);</span>
+        <span class="k">border-width</span>     <span class="o">:</span> <span class="m">1px</span><span class="p">;</span>
+        <span class="k">border-color</span>     <span class="o">:</span> <span class="m">#84a254</span><span class="p">;</span>
+        <span class="k">border</span><span class="o">-</span><span class="n">radius</span>    <span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+        <span class="k">font-size</span>        <span class="o">:</span> <span class="m">15px</span><span class="p">;</span>
+        <span class="k">font-weight</span>      <span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
 
 <p><code>Rake</code> again and you should see this:</p>
 
@@ -112,15 +112,15 @@
 
 <p>Lastly, let's change the background color. Let's add an ID to our background view. In the <code>timer_controller.rb</code> file, add the following line before the <code>end</code> of <code>viewDidLoad</code>:</p>
 
-<pre><code>    view.styleId = 'myView'
-</code></pre>
+<div class="highlight"><pre>    <span class="nt">view</span><span class="nc">.styleId</span> <span class="o">=</span> <span class="s1">'myView'</span>
+</pre></div>
 
 <p>What's we've done here is add a <code>styleId</code> to the view so we can style it by name. Now add the following CSS after your button CSS that was already added:</p>
 
-<pre><code>#myView {
-    background: linear-gradient(#000000, #f2f4f6);
-}
-</code></pre>
+<div class="highlight"><pre>    <span class="nf">#myView</span> <span class="p">{</span>
+        <span class="k">background</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="m">#000000</span><span class="o">,</span> <span class="m">#f2f4f6</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
 
 <p>Now you have a beautiful interface with just a few lines of CSS!</p>
 
