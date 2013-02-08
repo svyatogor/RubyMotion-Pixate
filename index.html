@@ -57,7 +57,7 @@
 </pre></div>
 </li>
 <li>
-<p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block.</p>
+<p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block. For the <strong>free</strong> version of the Pixate Engine, <code>user</code> and <code>key</code> are <strong>not</strong> required.</p>
 
 <div class="highlight"><pre><span class="no">Motion</span><span class="o">::</span><span class="no">Project</span><span class="o">::</span><span class="no">App</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
 <span class="c1"># ...</span>
@@ -83,7 +83,7 @@
 <p>In the <code>default.css</code> file you added prior, let's add a simple entry:</p>
 
 <div class="highlight"><pre>    <span class="nt">button</span> <span class="p">{</span>
-        <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+        <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
     <span class="p">}</span>
 </pre></div>
 
@@ -118,7 +118,7 @@
 <p>What's we've done here is add a <code>styleId</code> to the view so we can style it by name. Now add the following CSS after your button CSS that was already added:</p>
 
 <div class="highlight"><pre>    <span class="nf">#myView</span> <span class="p">{</span>
-        <span class="k">background</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="m">#000000</span><span class="o">,</span> <span class="m">#f2f4f6</span><span class="p">);</span>
+        <span class="k">background-color</span><span class="o">:</span> <span class="n">linear</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="m">#000000</span><span class="o">,</span> <span class="m">#f2f4f6</span><span class="p">);</span>
     <span class="p">}</span>
 </pre></div>
 
