@@ -57,13 +57,14 @@
 </pre></div>
 </li>
 <li>
-<p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block. For the <strong>free</strong> version of the Pixate Engine, <code>user</code> and <code>key</code> are <strong>not</strong> required.</p>
+<p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block. 
+For the <strong>free</strong> version of the Pixate Engine, <code>user</code> and <code>key</code> are <strong>not</strong> required.</p>
 
 <div class="highlight"><pre><span class="no">Motion</span><span class="o">::</span><span class="no">Project</span><span class="o">::</span><span class="no">App</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
 <span class="c1"># ...</span>
-<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s1">'USER ID'</span>
-<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">key</span>  <span class="o">=</span> <span class="s1">'KEY CODE'</span>
 <span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">framework</span> <span class="o">=</span> <span class="s1">'vendor/PXEngine.framework'</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s1">'USER ID'</span> <span class="c1"># Not required for free version</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">key</span>  <span class="o">=</span> <span class="s1">'KEY CODE'</span> <span class="c1"># Not required for free version</span>
 <span class="k">end</span>
 </pre></div>
 </li>
